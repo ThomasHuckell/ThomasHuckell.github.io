@@ -441,7 +441,16 @@ textarea {
     @media only screen and (max-width: 37.5em) {
       .project-details__content-title {
         font-size: 2.4rem; } }
-
+.project-details__small-img-cont{
+  width: 100%;
+  margin-bottom: 6rem;
+}
+.project-details__small-img{
+  display: block;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
 .project-details__showcase-img-cont {
   width: 100%;
   margin-bottom: 6rem; }
@@ -707,6 +716,14 @@ textarea {
     opacity: 1;
     animation: wheel 1.3s infinite;
     -webkit-animation: wheel 1.3s infinite; }
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+.inner-image {
+  max-height: 250px;
+}
 
 @keyframes wheel {
   to {
