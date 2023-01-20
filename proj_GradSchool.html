@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>MASc</title>
+    <meta name="description" content="Case study page of Project" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <div class="header__logo-container">
+          <div class="header__logo-img-cont">
+            <img
+              src="./assets/png/TH_transparent_2.png"
+              alt="Ram Maheshwari Logo Image"
+              class="header__logo-img"
+            />
+          </div>
+          <span class="header__logo-sub">Thomas Huckell</span>
+        </div>
+        <div class="header__main">
+          <ul class="header__links">
+            <li class="header__link-wrapper">
+              <a href="./index.html" class="header__link"> Home </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#about" class="header__link">About </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#projects" class="header__link">
+                Projects
+              </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#contact" class="header__link"> Contact </a>
+            </li>
+          </ul>
+          <div class="header__main-ham-menu-cont">
+            <img
+              src="./assets/svg/ham-menu.svg"
+              alt="hamburger menu"
+              class="header__main-ham-menu"
+            />
+            <img
+              src="./assets/svg/ham-menu-close.svg"
+              alt="hamburger menu close"
+              class="header__main-ham-menu-close d-none"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="header__sm-menu">
+        <div class="header__sm-menu-content">
+          <ul class="header__sm-menu-links">
+            <li class="header__sm-menu-link">
+              <a href="./index.html"> Home </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#about"> About </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#projects"> Projects </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#contact"> Contact </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section class="project-cs-hero">
+      <div class="project-cs-hero__content">
+        <h1 class="heading-primary">Masters Degree</h1>
+        <div class="project-cs-hero__info">
+          <p class="text-primary">
+            Legged robots have the potential to traverse remote or dangerous areas by utilizing
+            intermittent ground contact to navigate through complex terrain. Despite their promise,
+            legged robots, specifically bipeds, are inherently unstable and fail to operate reliably
+            in unstructured environments. This thesis aims to improve the standing balancing of
+            bipedal robots through the development of a new unified model that incorporates three
+            main fixed base balancing strategies of ankle, hip, and variable height.
+          </p>
+        </div>
+        <div class="project-cs-hero__cta">
+          <a href="https://qspace.library.queensu.ca/handle/1974/30096" class="btn btn--bg" target="_blank">Read My Thesis</a>
+        </div>
+        <div class="project-cs-hero__cta">
+          <a href="#publications" class="btn btn--bg" >Publications</a>
+        </div>
+        <div class="project-cs-hero__cta">
+          <a href="#posters" class="btn btn--bg" >Posters</a>
+        </div>
+      </div>
+    </section>
+    <section class="project-details">
+      <div class="main-container">
+        <div class="project-details__content">
+          <div class="project-details__showcase-img-cont">
+            <div class="flex-container">
+              <img src="./assets/gif/VHIPPFW_reducedOrder.gif" alt="model" class="inner-image">
+              <img src="./assets/gif/VHIPPFW_oneLeg.gif" alt="robot" class="inner-image">
+            </div>
+          </div>
+          <div class="project-details__content-main">
+            <div class="project-details__desc">
+              <h3 class="project-details__content-title">Thesis Overview</h3>
+              <p class="project-details__desc-para">
+                Legged robots are complex systems with a high degree of freedom which make optimal 
+                control methodologies for the whole-body dynamics computationally complex, especially 
+                for planning over long time horizons. Reduced order models encapsulate the whole-body 
+                dynamics into lower degree of freedom representation, making it more suitable for 
+                long term planning. The solutions of the reduced order models can then be fed back 
+                to whole-body control for objectives for to execute.
+              </p>
+                <div class="project-details__small-img-cont">
+                  <img src="./assets/png/Modeling_Bipeds.png"
+                    class="project-details__small-img"
+                    alt="modeling biped">
+                </div>
+              <p class="project-details__desc-para">  
+                The existing reduced order models used in legged robots only consider two of the 
+                three available balancing strategies:
+                <ol class ="project-details__desc-list">
+                  <strong>ankle strategy</strong>: modulate center of pressure within the base of 
+                  support.
+                </ol>
+                <ol class ="project-details__desc-list">
+                  <strong>hip strategy</strong>: generate angular momentum about center of mass 
+                  to produce restoring shear force at base of support.
+                </ol>
+                <ol class ="project-details__desc-list">
+                  <strong>variable height strategy</strong>: use vertical acceleration of 
+                  center of mass to momentarily increase ground reaction force magnitude.
+                </ol>
+              </p>
+            <p class="project-details__desc-para">  
+              In my research I propose variable height inverted pendulum plus flywheel 
+              (VHIPPFW) model a reduced order model that includes all available strategies 
+              with each of its control inputs relating to ankle, hip and variable height strategies.
+            </p>
+            <div class="project-details__small-img-cont">
+              <img
+                src="./assets/png/reduced order model.png"
+                alt="Project Image"
+                class="project-details__small-img"
+              />
+            </div>
+            <div class="project-details__desc">
+              <p class="project-details__desc-para">
+                With this unified model we examined how access to all balancing strategies impacts 
+                push recovery performance. The key contributions of my research was examining the 
+                stability regions of existing models to examine the contribution each balancing strategy 
+                has on overall stability, push recovery simulation using trajectory optimization of the 
+                unified model against existing models, and finally developed a nonlinear model 
+                predictive controller based on the unified and existing reduced order models 
+                then examining each controllers performance on push recovery simulations of 
+                the reduced order model dynamics as well as being implemented on simple simulated one legged robot.
+              </p>
+              <div class="project-details__tools-used">
+                <h3 class="project-details__content-title">Tools Used</h3>
+                <div class="skills">
+                  <div class="skills__skill">Trajectory Optimization</div>
+                  <div class="skills__skill">Nonlinear Model Predictive Control</div>
+                  <div class="skills__skill">Dynamic Modeling of Mechanical Systems</div>
+                  <div class="skills__skill">MATLAB</div>
+                  <div class="skills__skill">Simulink</div>
+                  <div class="skills__skill">CAD</div>
+                  <div class="skills__skill">C++</div>
+                </div>
+            </div>
+
+            <h3 class="project-details__content-title">Stability Analysis</h3>
+            
+            <p class="project-details__desc-para">
+              For the stability analysis we examined the linear inverted pendulum (LIP), linear inverted pendulum plus 
+              flywheel (LIPFW), and variable height inverted pendulum (VHIP) models. These models correspond to an ankle, 
+              ankle + hip, and ankle + variable height balancing strategy. We use anthropomorphic model parameters to 
+              gain insight on human balancing and better elucidate each strategies utility in standing balance for legged robots.
+            </p>
+            <p class="project-details__desc-para">
+              Previous research has been done to analytically solve the stability region for the LIP and LIPPFW model. VHIP 
+              model stability region cumbersome to solve analytically due to the nonlinearity. We determine the VHIP stability 
+              region numerically through examining the maximum control effort a bang-bang control where the model accelerates 
+              as fast as it can then quickly decelerates so the model reaches maximum height and momentarily increases the 
+              ground reaction force. After model reaches its maximum height, stability is achieved only if the if LIP stability 
+              criterion is satisfied. To compare the VHIP stability region we simulate the VHIP using the bang-bang control 
+              scheme over dense grid of initial conditions, then use a binary search of the final states of VHIP to determine 
+              if the LIP stability criterion is satisfied. The boundary set of stable initial conditions was taken as the 
+              stability region.
+            </p>
+            <p class="project-details__desc-para">
+              The ankle is strategy is having largest impact on the stability region, followed by the hip and variable height 
+              strategies. The hip and variable height strategies are constrained by joint limits of physical systems limiting 
+              the amount of time these strategies can be applied limiting their efficacy. While hip strategy is independent 
+              of initial condition, the variable height strategy is dependent on initial condition. The variable height 
+              strategy principle is based on momentarily increasing the ground reaction force, the component of this force 
+              which that is restoring balance is dependant difference between the center of mass and the center of pressure. 
+              As center of pressure approaches the center of mass the component of the restoring force reduces reducing the 
+              impact of the vertical acceleration.
+            </p>
+            <div class="project-details__showcase-img-cont">
+                <img 
+                  src="./assets/png/StabilityAnalysis.png"
+                  class="project-details__showcase-img"
+                  >
+            </div>
+            <p class="project-details__desc-para">
+              
+            </p>
+
+            <h3 class="project-details__content-title">Trajectory optimization</h3>
+            <p class="project-details__desc-para">
+              We examined push recovery of the existing and proposed unified model by simulating the model dynamics
+              when exposed to disturbance force using trajectory optimization. We transcribed the continous time problem
+              into a nonlinear program using trapizoidal direct colocation method and used an optimization criterion 
+              that equally penalizes the state deviation from the rest state and cost of control. With this criterion
+              we are were able to encourage the optimization to select balancing strategy that is most efficient at 
+              recovering from distrubances.
+            </p>
+            <div class ="project-details__showcase-img-cont">
+              <div class="flex-container">
+                <img
+                  src="./assets/gif/trajOpt_model.gif"
+                  alt="Project Image"
+                  class="inner-image"
+                />
+                <img 
+                  src="./assets/png/trajOptRecovery_VHIPPFW_627N_1e-1s_ControlTrj.png"
+                  alt="Project Image"
+                  class="inner-image"
+                />
+              </div>
+            </div>
+            <h3 class="project-details__content-title">Nonlinear Model Predictive Control</h3>
+            <p class="project-details__desc-para">
+              For the stability analysis we examined the linear inverted pendumlum (LIP), linear inverted pendulum plus flywheel 
+              (LIPFW), and variable height inverted pendulum (VHIP) models. These models correspond to an ankle, ankle + hip, and
+              ankle + variable height balancing strategy. We use athropromorphic model parameters so as to gain insight on human balancing
+              and better elucidate each strategies utility in standing balance for legged robots.
+            </p>
+
+            <div class="project-details__small-img-cont">
+              <img
+                src="./assets/gif/VHIPPFW_reducedOrder.gif"
+                class="project-details__small-img"
+              />
+          
+            </div>
+            <div class ="project-details__desc" id = "publications">
+              <h3 class="project-details__content-title">Puplications</h3>
+              <a href="https://ieeexplore.ieee.org/document/9981193" class="project-details__link">T. Huckell and A. R. Wu,
+                "Improved Zero Step Push Recovery with a Unified Reduced Order Model of Standing Balance," 
+                2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), Kyoto, Japan, 2022, 
+                pp. 8321-8327, doi: 10.1109/IROS47612.2022.9981193.
+              </a>
+            </div > 
+            <div class ="project-details__desc" id = "posters">
+              <h3 class="project-details__content-title">Posters</h3>
+                <a href="Posters/IngenuityLabsPoster_ThomasHuckell.pdf" class="project-details__link">
+                  "Improved Standing Balancing For Legged Robots With Unified
+                  Balancing Model" 
+                  2021 Robotics and AI Symposium (RAIS), Kingston, Ontario
+                </a> 
+                <p class="project-details__desc-para">
+                  Winner of Best Poster in Robotics
+                </p>
+                <a href="Posters/AMAM_Poster_Final.pdf" class="project-details__link">T. Huckell and A. R. Wu,
+                  "A Unified Reduced Order Model For Standing Balance Captures Biological Balance Strategy Preferences" 
+                  2021 International Symposium on Adaptive Motion of Animals and Machines (AMAM), Virtual Platform
+                </a>
+              </div > 
+            </div >
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <footer class="main-footer">
+      <div class="main-container">
+        <div class="main-footer__upper">
+          <div class="main-footer__row main-footer__row-1">
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Social</span>
+            </h2>
+            <div class="main-footer__social-cont">
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/linkedin-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/github-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/twitter-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/yt-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon main-footer__icon--mr-none"
+                  src="./assets/png/insta-ico.png"
+                  alt="icon"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="main-footer__row main-footer__row-2">
+            <h4 class="heading heading-sm text-lt">Thomas Huckell</h4>
+            <p class="main-footer__short-desc">
+            </p>
+          </div>
+        </div>
+
+        <div class="main-footer__lower">
+          &copy; Copyright 2021. Made by
+          <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com"
+            >Ram Maheshwari</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
+</html>
