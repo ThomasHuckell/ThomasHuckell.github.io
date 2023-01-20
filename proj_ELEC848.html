@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Parameter Identification</title>
+    <meta name="description" content="Case study page of Project" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <div class="header__logo-container">
+          <div class="header__logo-img-cont">
+            <img
+              src="./assets/png/TH_transparent_2.png"
+              alt="Ram Maheshwari Logo Image"
+              class="header__logo-img"
+            />
+          </div>
+          <span class="header__logo-sub">Thomas Huckell</span>
+        </div>
+        <div class="header__main">
+          <ul class="header__links">
+            <li class="header__link-wrapper">
+              <a href="./index.html" class="header__link"> Home </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#about" class="header__link">About </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#projects" class="header__link">
+                Projects
+              </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#contact" class="header__link"> Contact </a>
+            </li>
+          </ul>
+          <div class="header__main-ham-menu-cont">
+            <img
+              src="./assets/svg/ham-menu.svg"
+              alt="hamburger menu"
+              class="header__main-ham-menu"
+            />
+            <img
+              src="./assets/svg/ham-menu-close.svg"
+              alt="hamburger menu close"
+              class="header__main-ham-menu-close d-none"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="header__sm-menu">
+        <div class="header__sm-menu-content">
+          <ul class="header__sm-menu-links">
+            <li class="header__sm-menu-link">
+              <a href="./index.html"> Home </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#about"> About </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#projects"> Projects </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#contact"> Contact </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section class="project-cs-hero">
+      <div class="project-cs-hero__content">
+        <h1 class="heading-primary">Parameter Identification of CRS A465 Manipulator</h1>
+        <div class="project-cs-hero__info">
+          <p class="text-primary">
+            Robotic manipulators require accurate dynamic model of the system for effective control system design, 
+            and for accurate planning, simulation and training. The models parameters such as link mass, inertia, 
+            and frictional properties are not always provided in technical manuals or accurate to the individual robot. 
+            Experimental identification is used to accurately estimate these values which consists of consists of robot 
+            modeling, trajectory generation, data acquisition, signal processing, parameter estimation and model validation. 
+            In the final project for ELEC 848 a graduate controls course, this process was carried out for the CRS A465 robot
+            to build an accurate model.
+          </p>
+        </div>
+
+      </div>
+    </section>
+    <section class="project-details">
+      <div class="main-container">
+        <div class="project-details__content">
+          <div class ="project-details__showcase-img-cont">
+            <div class="flex-container">
+              <img
+                src="./assets/gif/CRS_traj.gif"
+                alt="Project Image"
+                class="inner-image"
+              />
+              <img 
+                src="./assets/png/test5-ww.png"
+                alt="Project Image"
+                class="inner-image"
+              />
+            </div>
+          </div>
+          <div class="project-details__content-main">
+            <div class="project-details__desc">
+              <h3 class="project-details__content-title">Project Overview</h3>
+              <p class="project-details__desc-para">
+                
+              </p>
+              <p class="project-details__desc-para">
+                We developed the dynamic model formulation using the Euler-Lagrange formulation. This expression is 
+                nonlinear in terms of the dynamic parameters, so it is reformulated into a reduced canonical form 
+                that is linear to model parameters.
+              </p>
+              <div class="project-details__med-img-cont">
+                <img 
+                  class="project-details__med-img"
+                  src="./assets/png/ELEC848_step1.png"
+                />
+              </div>
+              <p class="project-details__desc-para">
+                With dynamics in this form one can appy least square regression to
+                estimate these dynamic parameters.
+                <div class="project-details__small-img-cont">
+                  <img 
+                    class="project-details__small-img"
+                    src="./assets/png/ELEC848_step2.png"
+                  />
+                </div>
+                <p class="project-details__desc-para">
+                A joint trajectory was generated such that all the 
+                identifiable parameters are continuously excited. With this trajectory we recorded three training 
+                data sets and processed the noisy joint acceleration with a gaussian filter. We performed least 
+                square regressions on all 3 data sets to estimate the dynamic parameters.
+              </p>
+              <div class="project-details__small-img-cont">
+                <img 
+                src="./assets/png/VoltageEstWithFric.png"
+                class="project-details__small-img"
+                />
+              </div>
+              <p class="project-details__desc-para">
+                To validate the model we took two of the three training data sets took the average of the estimated 
+                parameters and used it to estimate the measured voltage of the third data set. We were able to 
+                predict the experimental results with an average Root Mean Square error for each joint of 0.088 Volts.
+              </p>
+            </div>
+            <div class="project-details__tools-used">
+              <h3 class="project-details__content-title">Tools Used</h3>
+              <div class="skills">
+                <div class="skills__skill">Lagrangian Dynamics</div>
+                <div class="skills__skill">MATLAB</div>
+                <div class="skills__skill">Data Analysis</div>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="main-footer">
+      <div class="main-container">
+        <div class="main-footer__upper">
+          <div class="main-footer__row main-footer__row-1">
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Social</span>
+            </h2>
+            <div class="main-footer__social-cont">
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/linkedin-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/github-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/twitter-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/yt-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon main-footer__icon--mr-none"
+                  src="./assets/png/insta-ico.png"
+                  alt="icon"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="main-footer__row main-footer__row-2">
+            <h4 class="heading heading-sm text-lt">John Doe</h4>
+            <p class="main-footer__short-desc">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit facilis
+              tempora explicabo quae quod deserunt
+            </p>
+          </div>
+        </div>
+
+        <div class="main-footer__lower">
+          &copy; Copyright 2021. Made by
+          <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com"
+            >Ram Maheshwari</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
+</html>
