@@ -482,6 +482,7 @@ textarea {
 }
 
 .project-details__showcase-img-cont {
+  display: block;
   width: 100%;
   margin-bottom: 6rem; }
 
@@ -753,12 +754,24 @@ textarea {
   justify-content: center;
 }
 .inner-image {
-  max-height: 250px;
+  width: 50%;
+  align-self: start;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .inner-image-small {
-  max-height: 175px;
+  width: 33.3%;
+  align-self: start;
+  margin-top: auto;
+  margin-bottom: auto;
 }
-S
+.inner-image-vsmall {
+  width: 20%;
+  align-self: start;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 figure {
   display: inline-block;
   margin: 0 auto;

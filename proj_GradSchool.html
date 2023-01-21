@@ -112,7 +112,7 @@
           <div class="project-details__showcase-img-cont">
             <figure>
               <div class="flex-container">
-                <img src="./assets/gif/VHIPPFW_reducedOrder.gif" alt="model" class="inner-image">
+                <img src="./assets/gif/VHIPPFW_reducedOrder.gif" alt="model" class="inner-image-small">
                 <img src="./assets/gif/VHIPPFW_oneLeg.gif" alt="robot" class="inner-image">
               </div>
               <figcaption>Push recovery simulation of unified balancing model using nonlinear model predictive
@@ -168,10 +168,6 @@
               <p class="project-details__desc-para">
                 With this unified model we examined how access to all balancing strategies impacts 
                 push recovery performance. The key contributions of my research include:
-                examining the stability regions , , and finally developed a nonlinear model 
-                predictive controller based on the unified and existing reduced order models 
-                then examining each controllers performance on push recovery simulations of 
-                the reduced order model dynamics as well as being implemented on simple simulated one legged robot.
               </p>
               <ol class ="project-details__desc-list">
                Examined stability regions of existing models to identify the contribution of each balancing strategy 
@@ -185,9 +181,9 @@
               </ol>
 
               <ol class ="project-details__desc-list">
-                Developed a nonlinear moddel predictive controller for proposed and existing model.
+                Developed a nonlinear moddel predictive controller for the proposed and existing model reduced order models.
                 Tested and tuned controller on reduced order models to achieve similar characteristics to
-                trajectory optimization results. Then deployed controller on simulated one-legged robot in simulink simscape multibody
+                trajectory optimization results. Then deployed controller on simulated one-legged robot in Simulink 
                 to test the practical implementation.
                 &nbsp;&nbsp;&nbsp;&nbsp; <a class ="btn btn--small btn--theme dynamicBgClr" href =./proj_GradSchool.html#MPC>learn more</a>
               </ol>
@@ -242,12 +238,12 @@
                   <img
                     src="./assets/png/LIPPFW_stability.png"
                     alt="Project Image"
-                    class="inner-image-small"
+                    class="inner-image"
                   />
                   <img 
                     src="./assets/png/VHIP_stability.png"
                     alt="Project Image"
-                    class="inner-image-small"
+                    class="inner-image"
                   />
                 </div>
                 <figcaption>Comparision of stability region of LIPPFW (left) and VHIP (right) models with recovery trajectories using maximum control effort.
@@ -280,7 +276,7 @@
                   <img
                     src="./assets/gif/trajOpt_model.gif"
                     alt="Project Image"
-                    class="inner-image"
+                    class="inner-image-small"
                   />
                   <img 
                     src="./assets/png/trajOptRecovery_VHIPPFW_627N_1e-1s_ControlTrj.png"
@@ -301,34 +297,18 @@
               variety of metrics, one of which was relative control contribution which we designed to evaluate the relative 
               contribution of each balancing strategy as percentage of the total cost of control. 
             </p>
-            <div class ="project-details__showcase-img-cont">
-                <table>
-                  <tr>
-                    <th>Model</th>
-                    <th>Maximum <br> Disturbance [N]</th>
-                  </tr>
-                  <tr>
-                    <th>LIP</th>
-                    <th>#1</th>
-                  </tr>
-                  <tr>
-                    <th>VHIP</th>
-                    <th>#1</th>
-                  </tr>
-                  <tr>
-                    <th>LIPPFW</th>
-                    <th>#1</th>
-                  </tr>
-                  <tr>
-                    <th>VHIPPFW</th>
-                    <th>#1</th>
-                  </tr>
-                </table>
+            <div class ="project-details__med-img-cont">
+              <figure>
                 <img 
                   src="./assets/png/trajOpt_strategyComp.png"
                   alt="Project Image"
-                  class="project-details__small-img"
+                  class="project-details__med-img"
                 />
+                <figcaption>Relative control contribution of each balancing strategy compared against push magnitude for the VHIPPFW model. A hierarchal balancing strategy is observed with
+                  ankle balancing being the dominant for small disturbances, the hip strategy then begins to be addopted as the disturbances reach the limit of ankle 
+                  balancing, and variable height strategy begins to be applied at the limits of the ankle + hip.
+                </figcaption>
+              </figure>
             </div>
             <p class="project-details__desc-para">
               The unified model with access to all available balancing strategies was able to recover from the largest push disturbance. 
