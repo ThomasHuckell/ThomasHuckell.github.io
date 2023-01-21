@@ -154,6 +154,9 @@ textarea {
   .btn--med {
     padding: 1.5rem 5rem;
     font-size: 1.6rem; }
+  .btn--small {
+    padding: .5rem .5rem;
+    font-size: 1.4rem; }
   .btn--theme {
     background: #2B394B;
     color: #fff; }
@@ -308,7 +311,12 @@ textarea {
     .projects__row-content-title {
       font-weight: 700;
       font-size: 2.8rem;
-      margin-bottom: 2rem; }
+      }
+    .projects__row-content-subtitle { 
+      font-weight: 400;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
       @media only screen and (max-width: 37.5em) {
         .projects__row-content-title {
           font-size: 2.4rem; } }
@@ -747,6 +755,24 @@ textarea {
 .inner-image {
   max-height: 250px;
 }
+.inner-image-small {
+  max-height: 175px;
+}
+S
+figure {
+  display: inline-block;
+  margin: 0 auto;
+}
+figure img {
+  vertical-align: top;
+}
+figure figcaption {
+  text-align: center;
+  font-size: 1.4rem;
+  line-height: 1.7;
+  color: grey;
+}
+
 
 @keyframes wheel {
   to {

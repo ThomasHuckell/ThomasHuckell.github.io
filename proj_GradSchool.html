@@ -39,11 +39,11 @@
             </li>
             <li class="header__link-wrapper">
               <a href="./index.html#projects" class="header__link">
-                Projects
+                Projects & Experience
               </a>
             </li>
             <li class="header__link-wrapper">
-              <a href="./index.html#contact" class="header__link"> Contact </a>
+              <a href="./proj_GradSchool.html#contact" class="header__link"> Contact </a>
             </li>
           </ul>
           <div class="header__main-ham-menu-cont">
@@ -72,11 +72,11 @@
             </li>
 
             <li class="header__sm-menu-link">
-              <a href="./index.html#projects"> Projects </a>
+              <a href="./index.html#projects"> Projects & Experience</a>
             </li>
 
             <li class="header__sm-menu-link">
-              <a href="./index.html#contact"> Contact </a>
+              <a href="./proj_GradSchool.html#contact"> Contact </a>
             </li>
           </ul>
         </div>
@@ -90,7 +90,7 @@
             Legged robots have the potential to traverse remote or dangerous areas by utilizing
             intermittent ground contact to navigate through complex terrain. Despite their promise,
             legged robots, specifically bipeds, are inherently unstable and fail to operate reliably
-            in unstructured environments. This thesis aims to improve the standing balancing of
+            in unstructured environments. My research aims to improve the standing balancing of
             bipedal robots through the development of a new unified model that incorporates three
             main fixed base balancing strategies of ankle, hip, and variable height.
           </p>
@@ -110,10 +110,15 @@
       <div class="main-container">
         <div class="project-details__content">
           <div class="project-details__showcase-img-cont">
-            <div class="flex-container">
-              <img src="./assets/gif/VHIPPFW_reducedOrder.gif" alt="model" class="inner-image">
-              <img src="./assets/gif/VHIPPFW_oneLeg.gif" alt="robot" class="inner-image">
-            </div>
+            <figure>
+              <div class="flex-container">
+                <img src="./assets/gif/VHIPPFW_reducedOrder.gif" alt="model" class="inner-image">
+                <img src="./assets/gif/VHIPPFW_oneLeg.gif" alt="robot" class="inner-image">
+              </div>
+              <figcaption>Push recovery simulation of unified balancing model using nonlinear model predictive
+                controller on reduced order model (left) <br> and a simple one-legged robot simulated in simscape multibody (right).
+              </figcaption>
+            </figure>
           </div>
           <div class="project-details__content-main">
             <div class="project-details__desc">
@@ -162,14 +167,31 @@
             <div class="project-details__desc">
               <p class="project-details__desc-para">
                 With this unified model we examined how access to all balancing strategies impacts 
-                push recovery performance. The key contributions of my research was examining the 
-                stability regions of existing models to examine the contribution each balancing strategy 
-                has on overall stability, push recovery simulation using trajectory optimization of the 
-                unified model against existing models, and finally developed a nonlinear model 
+                push recovery performance. The key contributions of my research include:
+                examining the stability regions , , and finally developed a nonlinear model 
                 predictive controller based on the unified and existing reduced order models 
                 then examining each controllers performance on push recovery simulations of 
                 the reduced order model dynamics as well as being implemented on simple simulated one legged robot.
               </p>
+              <ol class ="project-details__desc-list">
+               Examined stability regions of existing models to identify the contribution of each balancing strategy 
+               on overall stability &nbsp;&nbsp;&nbsp;&nbsp; <a class ="btn btn--small btn--theme dynamicBgClr" href =./proj_GradSchool.html#stability>learn more</a>
+              </ol>
+              
+              <ol class ="project-details__desc-list">
+                Simulated push recovery on proposed model and compare its performance to existing
+                models using trajectory optimization.  
+                &nbsp;&nbsp;&nbsp;&nbsp; <a class ="btn btn--small btn--theme dynamicBgClr" href =./proj_GradSchool.html#trajOpt>learn more</a>
+              </ol>
+
+              <ol class ="project-details__desc-list">
+                Developed a nonlinear moddel predictive controller for proposed and existing model.
+                Tested and tuned controller on reduced order models to achieve similar characteristics to
+                trajectory optimization results. Then deployed controller on simulated one-legged robot in simulink simscape multibody
+                to test the practical implementation.
+                &nbsp;&nbsp;&nbsp;&nbsp; <a class ="btn btn--small btn--theme dynamicBgClr" href =./proj_GradSchool.html#MPC>learn more</a>
+              </ol>
+
               <div class="project-details__tools-used">
                 <h3 class="project-details__content-title">Tools Used</h3>
                 <div class="skills">
@@ -181,9 +203,10 @@
                   <div class="skills__skill">CAD</div>
                   <div class="skills__skill">C++</div>
                 </div>
+              </div>
             </div>
 
-            <h3 class="project-details__content-title">Stability Analysis</h3>
+            <h3 class="project-details__content-title" id = "stability">Stability Analysis</h3>
             
             <p class="project-details__desc-para">
               For the stability analysis we examined the linear inverted pendulum (LIP), linear inverted pendulum plus 
@@ -191,6 +214,17 @@
               ankle + hip, and ankle + variable height balancing strategy. We use anthropomorphic model parameters to 
               gain insight on human balancing and better elucidate each strategies utility in standing balance for legged robots.
             </p>
+            <div class ="project-details__med-img-cont">
+              <figure>
+              <img
+                  src="./assets/png/LIP_stability.png"
+                  alt="lip stability"
+                  class="project-details__med-img"
+                />
+                <figcaption c>LIP model stabiliy region with recovery trajectories using PD feedback control of the center of pressure.
+                The LIP stability criterion is requires the capture point to within the base of support: &delta; .</figcaption>
+              </figure>
+            </div>
             <p class="project-details__desc-para">
               Previous research has been done to analytically solve the stability region for the LIP and LIPPFW model. VHIP 
               model stability region cumbersome to solve analytically due to the nonlinearity. We determine the VHIP stability 
@@ -202,64 +236,156 @@
               if the LIP stability criterion is satisfied. The boundary set of stable initial conditions was taken as the 
               stability region.
             </p>
+            <div class ="project-details__med-img-cont">
+              <figure>
+                <div class="flex-container">
+                  <img
+                    src="./assets/png/LIPPFW_stability.png"
+                    alt="Project Image"
+                    class="inner-image-small"
+                  />
+                  <img 
+                    src="./assets/png/VHIP_stability.png"
+                    alt="Project Image"
+                    class="inner-image-small"
+                  />
+                </div>
+                <figcaption>Comparision of stability region of LIPPFW (left) and VHIP (right) models with recovery trajectories using maximum control effort.
+                  The addition of the hip strategy offers uniform inprovement and considerably increases the stability region when compared to the addition
+                  of the variable height strategy.
+                </figcaption>
+              </figure> 
+            </div>
             <p class="project-details__desc-para">
-              The ankle is strategy is having largest impact on the stability region, followed by the hip and variable height 
+              For anthropomorphic systems, the ankle strategy has largest impact on the stability region, followed by the hip and variable height 
               strategies. The hip and variable height strategies are constrained by joint limits of physical systems limiting 
               the amount of time these strategies can be applied limiting their efficacy. While hip strategy is independent 
               of initial condition, the variable height strategy is dependent on initial condition. The variable height 
-              strategy principle is based on momentarily increasing the ground reaction force, the component of this force 
-              which that is restoring balance is dependant difference between the center of mass and the center of pressure. 
+              strategies principle is based on momentarily increasing the ground reaction force, the component of this force 
+              that contributes to restoring balance is dependant difference between the center of mass and the center of pressure. 
               As center of pressure approaches the center of mass the component of the restoring force reduces reducing the 
               impact of the vertical acceleration.
             </p>
-            <div class="project-details__showcase-img-cont">
-                <img 
-                  src="./assets/png/StabilityAnalysis.png"
-                  class="project-details__showcase-img"
-                  >
-            </div>
+            
+            <h3 class="project-details__content-title" id="trajOpt">Trajectory optimization</h3>
             <p class="project-details__desc-para">
-              
-            </p>
-
-            <h3 class="project-details__content-title">Trajectory optimization</h3>
-            <p class="project-details__desc-para">
-              We examined push recovery of the existing and proposed unified model by simulating the model dynamics
-              when exposed to disturbance force using trajectory optimization. We transcribed the continous time problem
-              into a nonlinear program using trapizoidal direct colocation method and used an optimization criterion 
-              that equally penalizes the state deviation from the rest state and cost of control. With this criterion
-              we are were able to encourage the optimization to select balancing strategy that is most efficient at 
-              recovering from distrubances.
+              To evaluate the performance of push recovery of the proposed model against the existing models, we used trajectory optimization 
+              of the model dynamics to generate the optimal controls over a range of push disturbances. We then compare performance of the 
+              recovery by evaluating a range of metrics such as the maximum recoverable disturbance of each model. We also want to examine 
+              how the balancing strategies are deployed. 
             </p>
             <div class ="project-details__showcase-img-cont">
-              <div class="flex-container">
-                <img
-                  src="./assets/gif/trajOpt_model.gif"
-                  alt="Project Image"
-                  class="inner-image"
-                />
-                <img 
-                  src="./assets/png/trajOptRecovery_VHIPPFW_627N_1e-1s_ControlTrj.png"
-                  alt="Project Image"
-                  class="inner-image"
-                />
-              </div>
+              <figure>
+                <div class="flex-container">
+                  <img
+                    src="./assets/gif/trajOpt_model.gif"
+                    alt="Project Image"
+                    class="inner-image"
+                  />
+                  <img 
+                    src="./assets/png/trajOptRecovery_VHIPPFW_627N_1e-1s_ControlTrj.png"
+                    alt="Project Image"
+                    class="inner-image"
+                  />
+                </div>
+                <figcaption>Push recovery simulation of VHIPPFW animation (left) and control policy (right) at maximum recoverable disturbance: 627N sustained for 0.1s.
+                </figcaption>
+              </figure>
             </div>
-            <h3 class="project-details__content-title">Nonlinear Model Predictive Control</h3>
             <p class="project-details__desc-para">
-              For the stability analysis we examined the linear inverted pendumlum (LIP), linear inverted pendulum plus flywheel 
-              (LIPFW), and variable height inverted pendulum (VHIP) models. These models correspond to an ankle, ankle + hip, and
-              ankle + variable height balancing strategy. We use athropromorphic model parameters so as to gain insight on human balancing
-              and better elucidate each strategies utility in standing balance for legged robots.
+              We used a trapezoidal direct collocation method to transcribe the continuous time problem into nonlinear program. The 
+              objective function was designed to equally penalize deviation of the model's state from rest position and the cost of 
+              control to encourage the optimization to select the most effective balancing strategy. We tested the LIP, LIPPFW, VHIP 
+              and the VHIPPFW model in push recovery simulation subjecting each model to a constant force sustained for 0.1 seconds. 
+              The magnitude of the disturbance is increased until the model fails to recover. We then process the data to examine a 
+              variety of metrics, one of which was relative control contribution which we designed to evaluate the relative 
+              contribution of each balancing strategy as percentage of the total cost of control. 
+            </p>
+            <div class ="project-details__showcase-img-cont">
+                <table>
+                  <tr>
+                    <th>Model</th>
+                    <th>Maximum <br> Disturbance [N]</th>
+                  </tr>
+                  <tr>
+                    <th>LIP</th>
+                    <th>#1</th>
+                  </tr>
+                  <tr>
+                    <th>VHIP</th>
+                    <th>#1</th>
+                  </tr>
+                  <tr>
+                    <th>LIPPFW</th>
+                    <th>#1</th>
+                  </tr>
+                  <tr>
+                    <th>VHIPPFW</th>
+                    <th>#1</th>
+                  </tr>
+                </table>
+                <img 
+                  src="./assets/png/trajOpt_strategyComp.png"
+                  alt="Project Image"
+                  class="project-details__small-img"
+                />
+            </div>
+            <p class="project-details__desc-para">
+              The unified model with access to all available balancing strategies was able to recover from the largest push disturbance. 
+              We also observed a hierarchal selection of balancing strategy, adopting the next most effective balancing strategy at 
+              limits of stability of the previous strategy, exhibiting similarities to human balancing.   
             </p>
 
-            <div class="project-details__small-img-cont">
+            <h3 class="project-details__content-title" id="MPC">Nonlinear Model Predictive Control</h3>
+            <p class="project-details__desc-para">
+              The trajectory optimization provides us a useful open loop solution of the entire push recovery. However, this solution is 
+              limited as it cannot be solved online and requires full information on the push disturbance and would not be robust to 
+              modeling errors. Model predictive control is method that recursively solves smaller scale trajectory optimization problems 
+              to generate a feedback control loop which is more robust to unknown disturbances and modeling error. Here we build upon the 
+              results of the trajectory optimization to create nonlinear model predictive controller with similar optimization criterion 
+              and deploy the controller in simulation on a simple one-legged robot.
+            </p>
+
+            <div class="project-details__med-img-cont">
               <img
-                src="./assets/gif/VHIPPFW_reducedOrder.gif"
-                class="project-details__small-img"
+                src="./assets/png/Representive Image.png"
+                class="project-details__med-img"
               />
-          
             </div>
+
+            <p class="project-details__desc-para">
+              We construct nonlinear model predictive controller (NMPC) for the proposed and existing reduced order models using the same 
+              optimization criterion as the trajectory optimization. Next, we tune the objective function of the NMPC such that they produce 
+              similar control policies and simulate push recovery subjecting the models to a disturbance sustained for 0.1s increasing the 
+              disturbance magnitude until the model fails. Next, we deployed the controller on simple one-legged robot in simulation using 
+              Simulink simscape multibody.  A four linked balancing robot was constructed to approximate an anthropomorphic system. A 
+              whole-body controller was then designed to convert NMPC controls for the reduced order model to joint level controls to track 
+              the NMPC state and control objectives.
+            </p>
+            <div class ="project-details__showcase-img-cont">
+              <figure>
+                <div class="flex-container">
+                  <img
+                    src="./assets/gif/VHIPPFW_oneLeg.gif"
+                    alt="Project Image"
+                    class="inner-image-small"
+                  />
+                  <img 
+                    src="./assets/png/robotSim_VHIPPFW_478N_0.1s_control.png"
+                    alt="Project Image"
+                    class="inner-image-small"
+                  />
+                </div>
+                <figcaption>Push recovery simulation of one-legged robot using the VHIPPFW NMPC contoller (left) and the respective control policy (right) at maximum recoverable disturbance: 627N sustained for 0.1s.
+                </figcaption>
+              </figure>
+            </div>
+
+            <p class="project-details__desc-para">
+              With access to all available balancing strategies the NMPC controller based on the VHIPPFW model outperformed the models in 
+              both push recovery simulations of the model dynamics and one-legged robot.
+            </p>
+
             <div class ="project-details__desc" id = "publications">
               <h3 class="project-details__content-title">Puplications</h3>
               <a href="https://ieeexplore.ieee.org/document/9981193" class="project-details__link">T. Huckell and A. R. Wu,
@@ -318,25 +444,12 @@
                   alt="icon"
                 />
               </a>
-              <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/yt-ico.png"
-                  alt="icon"
-                />
-              </a>
-              <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon main-footer__icon--mr-none"
-                  src="./assets/png/insta-ico.png"
-                  alt="icon"
-                />
-              </a>
             </div>
           </div>
-          <div class="main-footer__row main-footer__row-2">
+          <div class="main-footer__row main-footer__row-2" id="contact">
             <h4 class="heading heading-sm text-lt">Thomas Huckell</h4>
             <p class="main-footer__short-desc">
+              tom.huckell@gmail.com
             </p>
           </div>
         </div>
