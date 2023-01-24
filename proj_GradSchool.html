@@ -90,7 +90,7 @@
             Legged robots have the potential to traverse remote or dangerous areas by utilizing
             intermittent ground contact to navigate through complex terrain. Despite their promise,
             legged robots, specifically bipeds, are inherently unstable and fail to operate reliably
-            in unstructured environments. My research aims to improve the standing balancing of
+            in unstructured environments. My research aimed to improve the standing balancing of
             bipedal robots through the development of a new unified model that incorporates three
             main fixed base balancing strategies of ankle, hip, and variable height.
           </p>
@@ -171,7 +171,7 @@
               </p>
               <ol class ="project-details__desc-list">
                Examined stability regions of existing models to identify the contribution of each balancing strategy 
-               on overall stability &nbsp;&nbsp;&nbsp;&nbsp; <a class ="btn btn--small btn--theme dynamicBgClr" href =./proj_GradSchool.html#stability>learn more</a>
+               on overall stability. &nbsp;&nbsp;&nbsp;&nbsp; <a class ="btn btn--small btn--theme dynamicBgClr" href =./proj_GradSchool.html#stability>learn more</a>
               </ol>
               
               <ol class ="project-details__desc-list">
@@ -217,12 +217,12 @@
                   alt="lip stability"
                   class="project-details__med-img"
                 />
-                <figcaption c>LIP model stabiliy region with recovery trajectories using PD feedback control of the center of pressure.
+                <figcaption c>LIP model stability region with recovery trajectories using PD feedback control of the center of pressure.
                 The LIP stability criterion is requires the capture point to within the base of support: &delta; .</figcaption>
               </figure>
             </div>
             <p class="project-details__desc-para">
-              Previous research has been done to analytically solve the stability region for the LIP and LIPPFW model. VHIP 
+              Previous research has been done to analytically solve the stability region for the LIP and LIPPFW model. The VHIP 
               model stability region cumbersome to solve analytically due to the nonlinearity. We determine the VHIP stability 
               region numerically through examining the maximum control effort a bang-bang control where the model accelerates 
               as fast as it can then quickly decelerates so the model reaches maximum height and momentarily increases the 
@@ -246,8 +246,8 @@
                     class="inner-image"
                   />
                 </div>
-                <figcaption>Comparision of stability region of LIPPFW (left) and VHIP (right) models with recovery trajectories using maximum control effort.
-                  The addition of the hip strategy offers uniform inprovement and considerably increases the stability region when compared to the addition
+                <figcaption>Comparison of stability region of LIPPFW (left) and VHIP (right) models with recovery trajectories using maximum control effort.
+                  The addition of the hip strategy offers uniform improvement and considerably increases the stability region when compared to the addition
                   of the variable height strategy.
                 </figcaption>
               </figure> 
@@ -305,23 +305,23 @@
                   class="project-details__med-img"
                 />
                 <figcaption>Relative control contribution of each balancing strategy compared against push magnitude for the VHIPPFW model. A hierarchal balancing strategy is observed with
-                  ankle balancing being the dominant for small disturbances, the hip strategy then begins to be addopted as the disturbances reach the limit of ankle 
+                  ankle balancing being the dominant for small disturbances, the hip strategy then begins to be adopted as the disturbances reach the limit of ankle 
                   balancing, and variable height strategy begins to be applied at the limits of the ankle + hip.
                 </figcaption>
               </figure>
             </div>
             <p class="project-details__desc-para">
-              The unified model with access to all available balancing strategies was able to recover from the largest push disturbance. 
+              The unified model with access to all available balancing strategies was able to recover from the largest push disturbance, 3.0% larger than the next best reduced order model. 
               We also observed a hierarchal selection of balancing strategy, adopting the next most effective balancing strategy at 
-              limits of stability of the previous strategy, exhibiting similarities to human balancing.   
+              limits of the previous strategy, exhibiting similarities to human balancing preferences.   
             </p>
 
             <h3 class="project-details__content-title" id="MPC">Nonlinear Model Predictive Control</h3>
             <p class="project-details__desc-para">
               The trajectory optimization provides us a useful open loop solution of the entire push recovery. However, this solution is 
-              limited as it cannot be solved online and requires full information on the push disturbance and would not be robust to 
-              modeling errors. Model predictive control is method that recursively solves smaller scale trajectory optimization problems 
-              to generate a feedback control loop which is more robust to unknown disturbances and modeling error. Here we build upon the 
+              limited as it cannot be solved online and requires full information on the push disturbance (magnitued and duration) and would not be robust to 
+              modeling errors. Model predictive control (MPC) is method that recursively solves smaller scale trajectory optimization problems 
+              based on measured state at the MPC frequency to generate a feedback control loop which is more robust to unknown disturbances and modeling error. Here we build upon the 
               results of the trajectory optimization to create nonlinear model predictive controller with similar optimization criterion 
               and deploy the controller in simulation on a simple one-legged robot.
             </p>
@@ -336,7 +336,7 @@
             <p class="project-details__desc-para">
               We construct nonlinear model predictive controller (NMPC) for the proposed and existing reduced order models using the same 
               optimization criterion as the trajectory optimization. Next, we tune the objective function of the NMPC such that they produce 
-              similar control policies and simulate push recovery subjecting the models to a disturbance sustained for 0.1s increasing the 
+              similar control policies as the trajectory optimization simulations. Next we simulated push recovery subjecting the models to a disturbance sustained for 0.1s increasing the 
               disturbance magnitude until the model fails. Next, we deployed the controller on simple one-legged robot in simulation using 
               Simulink simscape multibody.  A four linked balancing robot was constructed to approximate an anthropomorphic system. A 
               whole-body controller was then designed to convert NMPC controls for the reduced order model to joint level controls to track 
@@ -348,12 +348,12 @@
                   <img
                     src="./assets/gif/VHIPPFW_oneLeg.gif"
                     alt="Project Image"
-                    class="inner-image-small"
+                    class="inner-image"
                   />
                   <img 
                     src="./assets/png/robotSim_VHIPPFW_478N_0.1s_control.png"
                     alt="Project Image"
-                    class="inner-image-small"
+                    class="inner-image"
                   />
                 </div>
                 <figcaption>Push recovery simulation of one-legged robot using the VHIPPFW NMPC contoller (left) and the respective control policy (right) at maximum recoverable disturbance: 627N sustained for 0.1s.
@@ -363,7 +363,8 @@
 
             <p class="project-details__desc-para">
               With access to all available balancing strategies the NMPC controller based on the VHIPPFW model outperformed the models in 
-              both push recovery simulations of the model dynamics and one-legged robot.
+              both push recovery simulations of the model dynamics and one-legged robot recovering from 3.5 and 5.2 % larger disturbances than the next
+              best model respectively.
             </p>
 
             <div class ="project-details__desc" id = "publications">
