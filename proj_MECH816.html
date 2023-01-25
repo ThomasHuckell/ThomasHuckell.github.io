@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>QMAST</title>
+    <title>Kalman Filter</title>
     <meta name="description" content="Case study page of Project" />
 
     <link rel="stylesheet" href="css/style.css" />
@@ -43,7 +43,7 @@
               </a>
             </li>
             <li class="header__link-wrapper">
-              <a href="./proj_QMAST.html#contact" class="header__link"> Contact </a>
+              <a href="./proj_MECH816.html#contact" class="header__link"> Contact </a>
             </li>
           </ul>
           <div class="header__main-ham-menu-cont">
@@ -72,11 +72,11 @@
             </li>
 
             <li class="header__sm-menu-link">
-              <a href="./index.html#projects"> Projects & Experience </a>
+              <a href="./index.html#projects"> Projects </a>
             </li>
 
             <li class="header__sm-menu-link">
-              <a href="./proj_QMAST.html#contact"> Contact </a>
+              <a href="./proj_MECH816.html#contact"> Contact </a>
             </li>
           </ul>
         </div>
@@ -84,54 +84,73 @@
     </header>
     <section class="project-cs-hero">
       <div class="project-cs-hero__content">
-        <h1 class="heading-primary">QMAST</h1>
+        <h1 class="heading-primary">Kalman Filter for Smartphone IMU</h1>
         <div class="project-cs-hero__info">
           <p class="text-primary">
-            I started working for QMAST as a general member of the mechanical design team where I was trained 
-            in a range of rapid prototyping methods such as 3D printing, laser cutting, and CNC milling in addition
-            to learning the fabrication process of composite materials.
-            After a year as a general member I was promoted to manager of the mechanical team. In this role I was in 
-            charge of planning, precurement of materials, training and workload delegation. Additionally, as manager
-            of the mechanical team I liased with the electical and software teams to coordinate deadlines and dependecies between teams.
+            A Kalman Filter is a useful tool to create a probabilistic way of recursively updating a systems state from noisy measurements using a model of measurement
+            process and system dynamics to minimize error. This filtering method was used on a smartphones IMU sensor to 
+            develop a way of accurately measuring body movements with the readly available sensors in our smartphones. More accessible methods of measuring body movement will 
+            make it easier to record and study high risk tasks for musculoskeletal injuries in remote or developing countries such as <a href ="https://pubmed.ncbi.nlm.nih.gov/15176126/"><u>handloom weavers in West Bengal</u></a>.
           </p>
         </div>
+
       </div>
     </section>
     <section class="project-details">
       <div class="main-container">
         <div class="project-details__content">
-          <div class="project-details__showcase-img-cont">
-            <img
-              src="./assets/png/HullProgression.png"
-              alt="Project Image"
-              class="project-details__showcase-img"
-            />
+          <div class ="project-details__showcase-img-cont">
+            <figure>
+                <img 
+                  src="./assets/png/MECH816 setup.png"
+                  alt="Project Image"
+                  class="project-details__showcase-img"
+                />
+              <figcaption>Smartphone location for experiment using simple excersize case (left) and recorded raw and filtered Euler angles during simulated hand loom motions. </figcaption>
+            </figure>
           </div>
           <div class="project-details__content-main">
             <div class="project-details__desc">
               <h3 class="project-details__content-title">Project Overview</h3>
               <p class="project-details__desc-para">
-                One projects I headed while on QMAST was redesigning the hull. Our goal was to improve the speed of
-                the boat through reducing the hulls width and extending the keel length. The process started with designing a CAD model of the hull
-                which was based upon a traditional bulb keel sailboat hull.
-                This model was recreated to make a plug to base mold of the hull from. First,
-                cross sections of the CAD model were used to generate profiles to cut with a laser cutter. These cut profiles are
-                positioned at the appropriate distances using a support frame with the voids between profiles filled with foam then faired to match the desired contours. The plug was then
-                prepped for a fiberglass layup to create a mold for the hull. The mold was then used to create 
-                the hulls shell which was fabricated with carbon fiber and reinforced with bulkheads for added
-                stuctural support and to mount electro-mechanical systems.
+                
+              </p>
+              <p class="project-details__desc-para">
+                Two discrete Kalman filters were designed for accelerometer and magnetometer data to estimate the gravitational acceleration 
+                and magnetic field from external acceleration and magnetic disturbances respectively. The estimated gravitational acceleration 
+                and magnetic field can be used with the Arctangent method to calculate the Euler angles to determine the orientation of the phone. 
+                The designed filter was then validated against a provided data set from XSENS IMU using its raw and processed data. After validation 
+                of the filter was completed, data was acquired using a smartphone attached to the arm and forearm while simulating motions of 
+                using a handloom.
+              </p>
+              <div class ="project-details__med-img-cont">
+                <figure>
+                    <img 
+                      src="./assets/png/MECH816 error.png"
+                      alt="Project Image"
+                      class="project-details__small-img"
+                    />
+                  <figcaption>Error in Euler angles from developed Kalman filter and the processed XSENS data. </figcaption>
+                </figure>
+              </div>
+    
+              <p class="project-details__desc-para">
+                Comparing our filter on the raw XSENS data set I was able to produce Euler angles within an RMS error of [1.25 1.09 1.40] degrees of 
+                the processed data using XSENS proprietary software. With the filter providing accurate measurements the filter was tested on a smartphone's 
+                IMU data. While no ground truth validation of phones measurement was completed, the Kalman filter was able to produce results 
+                that capture key trends of the motion when simulating the operation of a handloom.
               </p>
             </div>
             <div class="project-details__tools-used">
               <h3 class="project-details__content-title">Tools Used</h3>
               <div class="skills">
-                <div class="skills__skill">CAD</div>
-                <div class="skills__skill">Project Management</div>
-                <div class="skills__skill">Composite Fabrication</div>
-                <div class="skills__skill">3D Printing</div>
-                <div class="skills__skill">Laser Cutting</div>
+                <div class="skills__skill">MATLAB</div>
+                <div class="skills__skill">Data Analysis</div>
+                <div class="skills__skill">Biomechanics</div>
+                <div class="skills__skill">Stochastics</div>
               </div>
             </div>
+          
           </div>
         </div>
       </div>
@@ -160,7 +179,7 @@
               </a>
             </div>
           </div>
-          <div class="main-footer__row main-footer__row-2" id = "contact">
+          <div class="main-footer__row main-footer__row-2">
             <h4 class="heading heading-sm text-lt">Thomas Huckell</h4>
             <p class="main-footer__short-desc">
               tom.huckell@gmail.com

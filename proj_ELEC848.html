@@ -43,7 +43,7 @@
               </a>
             </li>
             <li class="header__link-wrapper">
-              <a href="./index.html#contact" class="header__link"> Contact </a>
+              <a href="./proj_ELEC848.html#contact" class="header__link"> Contact </a>
             </li>
           </ul>
           <div class="header__main-ham-menu-cont">
@@ -76,7 +76,7 @@
             </li>
 
             <li class="header__sm-menu-link">
-              <a href="./index.html#contact"> Contact </a>
+              <a href="./proj_ELEC848.html#contact"> Contact </a>
             </li>
           </ul>
         </div>
@@ -139,6 +139,7 @@
               <p class="project-details__desc-para">
                 With dynamics in this form one can appy least square regression to
                 estimate these dynamic parameters.
+              </p>
                 <div class="project-details__small-img-cont">
                   <img 
                     class="project-details__small-img"
@@ -149,17 +150,20 @@
                 A joint trajectory was generated such that all the 
                 identifiable parameters are continuously excited. With this trajectory we recorded three training 
                 data sets and processed the noisy joint acceleration with a gaussian filter. We performed least 
-                square regressions on all 3 data sets to estimate the dynamic parameters.
+                square regressions on all three data sets to estimate the dynamic parameters.
               </p>
               <div class="project-details__small-img-cont">
-                <img 
-                src="./assets/png/VoltageEstWithFric.png"
-                class="project-details__small-img"
-                />
+                <figure>
+                  <img 
+                  src="./assets/png/VoltageEstWithFric.png"
+                  class="project-details__small-img"
+                  />
+                  <figcaption>Comparision of estimated voltage from dynamic parameters and measured voltage of CRS manipulator</figcaption>
+                </figure>
               </div>
               <p class="project-details__desc-para">
-                To validate the model we took two of the three training data sets took the average of the estimated 
-                parameters and used it to estimate the measured voltage of the third data set. We were able to 
+                To validate the model, we averaged the estimated dynamic parameters from two the three training data sets.
+                The average dynamic parameters were then used to estimate the measured voltage of the third data set. We were able to 
                 predict the experimental results with an average Root Mean Square error for each joint of 0.088 Volts.
               </p>
             </div>
@@ -169,6 +173,7 @@
                 <div class="skills__skill">Lagrangian Dynamics</div>
                 <div class="skills__skill">MATLAB</div>
                 <div class="skills__skill">Data Analysis</div>
+                <div class="skills__skill">Control</div>
               </div>
             </div>
           
@@ -208,12 +213,6 @@
           </div>
         </div>
 
-        <div class="main-footer__lower">
-          &copy; Copyright 2021. Made by
-          <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com"
-            >Ram Maheshwari</a
-          >
-        </div>
       </div>
     </footer>
     <script src="./index.js"></script>

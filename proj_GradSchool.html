@@ -145,7 +145,7 @@
                 </ol>
                 <ol class ="project-details__desc-list">
                   <strong>hip strategy</strong>: generate angular momentum about center of mass 
-                  to produce restoring shear force at base of support.
+                  to produce restoring shear force at the base of support.
                 </ol>
                 <ol class ="project-details__desc-list">
                   <strong>variable height strategy</strong>: use vertical acceleration of 
@@ -181,8 +181,8 @@
               </ol>
 
               <ol class ="project-details__desc-list">
-                Developed a nonlinear moddel predictive controller for the proposed and existing model reduced order models.
-                Tested and tuned controller on reduced order models to achieve similar characteristics to
+                Developed a nonlinear moddel predictive controller for the proposed and existing reduced order models.
+                Tested and tuned each controller on simulated model dynamics to achieve similar characteristics to
                 trajectory optimization results. Then deployed controller on simulated one-legged robot in Simulink 
                 to test the practical implementation.
                 &nbsp;&nbsp;&nbsp;&nbsp; <a class ="btn btn--small btn--theme dynamicBgClr" href =./proj_GradSchool.html#MPC>learn more</a>
@@ -218,13 +218,13 @@
                   class="project-details__med-img"
                 />
                 <figcaption c>LIP model stability region with recovery trajectories using PD feedback control of the center of pressure.
-                The LIP stability criterion is requires the capture point to within the base of support: &delta; .</figcaption>
+                The LIP stability criterion requires the capture point to within the base of support: &delta; .</figcaption>
               </figure>
             </div>
             <p class="project-details__desc-para">
               Previous research has been done to analytically solve the stability region for the LIP and LIPPFW model. The VHIP 
               model stability region cumbersome to solve analytically due to the nonlinearity. We determine the VHIP stability 
-              region numerically through examining the maximum control effort a bang-bang control where the model accelerates 
+              region numerically by simulating the VHIP dyanamics using maximum control effort a bang-bang control scheme where the model accelerates 
               as fast as it can then quickly decelerates so the model reaches maximum height and momentarily increases the 
               ground reaction force. After model reaches its maximum height, stability is achieved only if the if LIP stability 
               criterion is satisfied. To compare the VHIP stability region we simulate the VHIP using the bang-bang control 
@@ -253,22 +253,21 @@
               </figure> 
             </div>
             <p class="project-details__desc-para">
-              For anthropomorphic systems, the ankle strategy has largest impact on the stability region, followed by the hip and variable height 
-              strategies. The hip and variable height strategies are constrained by joint limits of physical systems limiting 
-              the amount of time these strategies can be applied limiting their efficacy. While hip strategy is independent 
+              For anthropomorphic systems, the ankle strategy has the largest impact on the stability region, followed by the hip and variable height 
+              strategies. The hip and variable height strategies are constrained by joint limits, restricting
+              the amount of time these strategies can be applied. While the hip strategy is independent 
               of initial condition, the variable height strategy is dependent on initial condition. The variable height 
               strategies principle is based on momentarily increasing the ground reaction force, the component of this force 
-              that contributes to restoring balance is dependant difference between the center of mass and the center of pressure. 
-              As center of pressure approaches the center of mass the component of the restoring force reduces reducing the 
-              impact of the vertical acceleration.
+              that contributes to restoring balance is dependant difference between the center of mass and the center of pressure, thus as the center of
+              mass approaches the center of pressure limits the benifits of increasing the ground reaction force magitude cannot be realized.
             </p>
             
             <h3 class="project-details__content-title" id="trajOpt">Trajectory optimization</h3>
             <p class="project-details__desc-para">
               To evaluate the performance of push recovery of the proposed model against the existing models, we used trajectory optimization 
               of the model dynamics to generate the optimal controls over a range of push disturbances. We then compare performance of the 
-              recovery by evaluating a range of metrics such as the maximum recoverable disturbance of each model. We also want to examine 
-              how the balancing strategies are deployed. 
+              recovery by evaluating a range of metrics such as the maximum recoverable disturbance of each model. We also examine 
+              how the balancing strategies are deployed over the range of examined disturbances. 
             </p>
             <div class ="project-details__showcase-img-cont">
               <figure>
@@ -289,8 +288,8 @@
               </figure>
             </div>
             <p class="project-details__desc-para">
-              We used a trapezoidal direct collocation method to transcribe the continuous time problem into nonlinear program. The 
-              objective function was designed to equally penalize deviation of the model's state from rest position and the cost of 
+              We used the trapezoidal direct collocation method to transcribe the continuous time problem into nonlinear program. The 
+              objective function was designed to equally penalize deviation of the model's state from the rest position and cost of 
               control to encourage the optimization to select the most effective balancing strategy. We tested the LIP, LIPPFW, VHIP 
               and the VHIPPFW model in push recovery simulation subjecting each model to a constant force sustained for 0.1 seconds. 
               The magnitude of the disturbance is increased until the model fails to recover. We then process the data to examine a 
@@ -318,7 +317,7 @@
 
             <h3 class="project-details__content-title" id="MPC">Nonlinear Model Predictive Control</h3>
             <p class="project-details__desc-para">
-              The trajectory optimization provides us a useful open loop solution of the entire push recovery. However, this solution is 
+              The trajectory optimization provides a useful open loop solution of the entire push recovery. However, this solution is 
               limited as it cannot be solved online and requires full information on the push disturbance (magnitued and duration) and would not be robust to 
               modeling errors. Model predictive control (MPC) is method that recursively solves smaller scale trajectory optimization problems 
               based on measured state at the MPC frequency to generate a feedback control loop which is more robust to unknown disturbances and modeling error. Here we build upon the 
@@ -327,10 +326,13 @@
             </p>
 
             <div class="project-details__med-img-cont">
+              <figure>
               <img
-                src="./assets/png/Representive Image.png"
+                src="./assets/png/control block diagram.png"
                 class="project-details__med-img"
               />
+              <figcaption>Control block diagram for the one-legged robot simulations.</figcaption>
+            </figure>
             </div>
 
             <p class="project-details__desc-para">
@@ -338,9 +340,10 @@
               optimization criterion as the trajectory optimization. Next, we tune the objective function of the NMPC such that they produce 
               similar control policies as the trajectory optimization simulations. Next we simulated push recovery subjecting the models to a disturbance sustained for 0.1s increasing the 
               disturbance magnitude until the model fails. Next, we deployed the controller on simple one-legged robot in simulation using 
-              Simulink simscape multibody.  A four linked balancing robot was constructed to approximate an anthropomorphic system. A 
+              Simulink simscape multibody. A four linked balancing robot was constructed to approximate an anthropomorphic system. A 
               whole-body controller was then designed to convert NMPC controls for the reduced order model to joint level controls to track 
-              the NMPC state and control objectives.
+              the NMPC state and control objectives. We subject the one-legged robot to the same disturbances tested in the reduced order model simulations and compare
+              how the different NMPC designs perform on the one-legged robot.
             </p>
             <div class ="project-details__showcase-img-cont">
               <figure>
@@ -366,7 +369,24 @@
               both push recovery simulations of the model dynamics and one-legged robot recovering from 3.5 and 5.2 % larger disturbances than the next
               best model respectively.
             </p>
-
+            <h3 class="project-details__content-title" >Future Work</h3>
+            <p class="project-details__desc-para">
+              The next steps of this research is hardware implementation on a one-legged robot. Development of a one legged robot to test push recovery was started but due to
+              time constraints and limited access to the lab during the pandemic this project was removed from the scope of my thesis. Piliminary work was done
+              on constructing and testing actuators to use for the one legged robot. The prototype's actuation was based upon the <a href="https://open-dynamic-robot-initiative.github.io/"><u>Open Dyanamic Robot Initiative's</u></a> actuator design. 
+              Testing and integration of the field oriented control through the Texas Instruments evaluation board with Simulink was conducted on motor test rig to do simple force control tasks.
+            </p>
+            <div class ="project-details__med-img-cont">
+              <figure>
+                <img 
+                  src="./assets/jpeg/actuator_module_core_1.png"
+                  alt="Project Image"
+                  class="project-details__med-img"
+                />
+                <figcaption> Open Dyanamic Robot Initiative Torque controlled actuator module.
+                </figcaption>
+              </figure>
+            </div>
             <div class ="project-details__desc" id = "publications">
               <h3 class="project-details__content-title">Puplications</h3>
               <a href="https://ieeexplore.ieee.org/document/9981193" class="project-details__link">T. Huckell and A. R. Wu,
@@ -418,13 +438,6 @@
                   alt="icon"
                 />
               </a>
-              <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/twitter-ico.png"
-                  alt="icon"
-                />
-              </a>
             </div>
           </div>
           <div class="main-footer__row main-footer__row-2" id="contact">
@@ -435,12 +448,7 @@
           </div>
         </div>
 
-        <div class="main-footer__lower">
-          &copy; Copyright 2021. Made by
-          <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com"
-            >Ram Maheshwari</a
-          >
-        </div>
+        
       </div>
     </footer>
     <script src="./index.js"></script>
