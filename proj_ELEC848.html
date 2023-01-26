@@ -92,8 +92,8 @@
             and frictional properties are not always provided in technical manuals or accurate to the individual robot. 
             Experimental identification is used to accurately estimate these values which consists of robot 
             modeling, trajectory generation, data acquisition, signal processing, parameter estimation and model validation. 
-            In the final project for ELEC 848 a graduate controls course, this process was carried out for the CRS A465 robot
-            to build an accurate model.
+            In the final project for ELEC 848, a graduate controls course, this process was carried out for the CRS A465 manipulator
+            to build an accurate dynamic model.
           </p>
         </div>
 
@@ -116,7 +116,7 @@
                   class="inner-image"
                 />
               </div>
-              <figcaption>CRS A465 running a programmed trajectory designed to exite dynamic characteristics.</figcaption>
+              <figcaption>CRS A465 running a programmed trajectory designed to excite dynamic characteristics.</figcaption>
             </figure>
           </div>
           <div class="project-details__content-main">
@@ -137,7 +137,7 @@
                 />
               </div>
               <p class="project-details__desc-para">
-                With dynamics in this form one can appy least square regression to
+                With dynamics in this form one can apply least square regression to
                 estimate these dynamic parameters.
               </p>
                 <div class="project-details__small-img-cont">
@@ -148,7 +148,7 @@
                 </div>
                 <p class="project-details__desc-para">
                 A joint trajectory was generated such that all the 
-                identifiable parameters are continuously excited. With this trajectory three traing data sets were recorded 
+                identifiable parameters are continuously excited. With this trajectory three training data sets were recorded 
                 and the noisy joint acceleration data was processed with a gaussian filter. A least square regression was
                 performed all three data sets to estimate the dynamic parameters.
               </p>
@@ -158,11 +158,11 @@
                   src="./assets/png/VoltageEstWithFric.png"
                   class="project-details__small-img"
                   />
-                  <figcaption>Comparision of estimated voltage from dynamic parameters and measured voltage of CRS manipulator</figcaption>
+                  <figcaption>Comparison of estimated voltage from dynamic parameters and measured voltage of CRS manipulator</figcaption>
                 </figure>
               </div>
               <p class="project-details__desc-para">
-                To validate the model, the average of the estimated dynamic parameters from two the three training data sets was used to estimate the measured voltage of 
+                To validate the model, the average of the estimated dynamic parameters from two of the three training data sets was used to estimate the measured voltage of 
                 the third data set. With this dynamic model, the average RMS error between the predicted voltage and measured voltage was 0.088 Volts.
               </p>
             </div>
