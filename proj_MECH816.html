@@ -1,195 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Kalman Filter</title>
-    <meta name="description" content="Case study page of Project" />
 
-    <link rel="stylesheet" href="css/style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Kalman Filter</title>
+  <meta name="description" content="Case study page of Project" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="header">
-      <div class="header__content">
-        <div class="header__logo-container">
-          <div class="header__logo-img-cont">
-            <img
-              src="./assets/png/TH_transparent_2.png"
-              alt="Ram Maheshwari Logo Image"
-              class="header__logo-img"
-            />
-          </div>
-          <span class="header__logo-sub">Thomas Huckell</span>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__content">
+      <div class="header__logo-container">
+        <div class="header__logo-img-cont">
+          <img src="./assets/png/TH_transparent_2.png" alt="Ram Maheshwari Logo Image" class="header__logo-img" />
         </div>
-        <div class="header__main">
-          <ul class="header__links">
-            <li class="header__link-wrapper">
-              <a href="./index.html" class="header__link"> Home </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#about" class="header__link">About </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#projects" class="header__link">
-                Projects & Experience
-              </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./proj_MECH816.html#contact" class="header__link"> Contact </a>
-            </li>
-          </ul>
-          <div class="header__main-ham-menu-cont">
-            <img
-              src="./assets/svg/ham-menu.svg"
-              alt="hamburger menu"
-              class="header__main-ham-menu"
-            />
-            <img
-              src="./assets/svg/ham-menu-close.svg"
-              alt="hamburger menu close"
-              class="header__main-ham-menu-close d-none"
-            />
-          </div>
+        <span class="header__logo-sub">Thomas Huckell</span>
+      </div>
+      <div class="header__main">
+        <ul class="header__links">
+          <li class="header__link-wrapper">
+            <a href="./index.html" class="header__link"> Home </a>
+          </li>
+          <li class="header__link-wrapper">
+            <a href="./index.html#about" class="header__link">About </a>
+          </li>
+          <li class="header__link-wrapper">
+            <a href="./index.html#projects" class="header__link">
+              Projects & Experience
+            </a>
+          </li>
+          <li class="header__link-wrapper">
+            <a href="./proj_MECH816.html#contact" class="header__link"> Contact </a>
+          </li>
+        </ul>
+        <div class="header__main-ham-menu-cont">
+          <img src="./assets/svg/ham-menu.svg" alt="hamburger menu" class="header__main-ham-menu" />
+          <img src="./assets/svg/ham-menu-close.svg" alt="hamburger menu close"
+            class="header__main-ham-menu-close d-none" />
         </div>
       </div>
-      <div class="header__sm-menu">
-        <div class="header__sm-menu-content">
-          <ul class="header__sm-menu-links">
-            <li class="header__sm-menu-link">
-              <a href="./index.html"> Home </a>
-            </li>
+    </div>
+    <div class="header__sm-menu">
+      <div class="header__sm-menu-content">
+        <ul class="header__sm-menu-links">
+          <li class="header__sm-menu-link">
+            <a href="./index.html"> Home </a>
+          </li>
 
-            <li class="header__sm-menu-link">
-              <a href="./index.html#about"> About </a>
-            </li>
+          <li class="header__sm-menu-link">
+            <a href="./index.html#about"> About </a>
+          </li>
 
-            <li class="header__sm-menu-link">
-              <a href="./index.html#projects"> Projects </a>
-            </li>
+          <li class="header__sm-menu-link">
+            <a href="./index.html#projects"> Projects </a>
+          </li>
 
-            <li class="header__sm-menu-link">
-              <a href="./proj_MECH816.html#contact"> Contact </a>
-            </li>
-          </ul>
-        </div>
+          <li class="header__sm-menu-link">
+            <a href="./proj_MECH816.html#contact"> Contact </a>
+          </li>
+        </ul>
       </div>
-    </header>
-    <section class="project-cs-hero">
-      <div class="project-cs-hero__content">
-        <h1 class="heading-primary">Kalman Filter for Smartphone IMU</h1>
-        <div class="project-cs-hero__info">
-          <p class="text-primary">
-            A Kalman Filter is a useful tool to create a probabilistic way of recursively updating a systems state from noisy measurements using a model of the measurement
-            process and system dynamics to minimize error. This filtering method was used on a smartphones IMU sensor to 
-            develop a way of accurately measuring body movements with the readily available sensors in our smartphones. More accessible methods of measuring body movement will 
-            make it easier to record and study high risk tasks for musculoskeletal injuries in remote or developing countries such as <a href ="https://pubmed.ncbi.nlm.nih.gov/15176126/"><u>handloom weavers in West Bengal</u></a>.
-          </p>
-        </div>
-
+    </div>
+  </header>
+  <section class="project-cs-hero">
+    <div class="project-cs-hero__content">
+      <h1 class="heading-primary">Kalman Filter for Smartphone IMU</h1>
+      <div class="project-cs-hero__info">
+        <p class="text-primary">
+          A Kalman Filter is a useful tool to create a probabilistic way of recursively updating a systems state from
+          noisy measurements using a model of the measurement
+          process and system dynamics to minimize error. This filtering method was used on a smartphones IMU sensor to
+          develop a way of accurately measuring body movements with the readily available sensors in our smartphones.
+          More accessible methods of measuring body movement will
+          make it easier to record and study high risk tasks for musculoskeletal injuries in remote or developing
+          countries such as <a href="https://pubmed.ncbi.nlm.nih.gov/15176126/"><u>handloom weavers in West
+              Bengal</u></a>.
+        </p>
       </div>
-    </section>
-    <section class="project-details">
-      <div class="main-container">
-        <div class="project-details__content">
-          <div class ="project-details__showcase-img-cont">
-            <figure>
-                <img 
-                  src="./assets/png/MECH816 setup.png"
-                  alt="Project Image"
-                  class="project-details__showcase-img"
-                />
-              <figcaption>Smartphone location for experiment using simple excercise case (left) and recorded raw and filtered Euler angles during simulated hand loom motions. </figcaption>
-            </figure>
-          </div>
-          <div class="project-details__content-main">
-            <div class="project-details__desc">
-              <h3 class="project-details__content-title">Project Overview</h3>
-              <p class="project-details__desc-para">
-                
-              </p>
-              <p class="project-details__desc-para">
-                Two discrete Kalman filters were designed to estimate the gravitational acceleration vector 
-                and magnetic field from external acceleration and magnetic disturbances respectively. The estimated gravitational acceleration 
-                and magnetic field can be used with the Arctangent method to calculate the Euler angles to determine the orientation of the phone. 
-                The designed filter was then validated against a provided data set from Xsens IMU using its raw and processed data. After validation 
-                of the filter was completed, data was acquired using a smartphone attached to the arm and forearm while simulating motions of 
-                using a handloom.
-              </p>
-              <div class ="project-details__med-img-cont">
-                <figure>
-                    <img 
-                      src="./assets/png/MECH816 error.png"
-                      alt="Project Image"
-                      class="project-details__small-img"
-                    />
-                  <figcaption>Error in Euler angles from developed Kalman filter and the processed XSENS data. </figcaption>
-                </figure>
-              </div>
-    
-              <p class="project-details__desc-para">
-                Comparing our filter on the raw Xsens data set I was able to produce Euler angles within an Root Mean Square (RMS) error of [1.25 1.09 1.40] degrees of 
-                the processed data using Xsens proprietary software. With the filter providing accurate measurements the filter was tested on a smartphone's 
-                IMU data. While no ground truth validation of the phones measurement was completed, the Kalman filter was able to produce results 
-                that capture key trends of the motion when simulating the operation of a handloom.
-              </p>
+
+    </div>
+  </section>
+  <section class="project-details">
+    <div class="main-container">
+      <div class="project-details__content">
+        <div class="project-details__showcase-img-cont">
+          <figure>
+            <img src="./assets/png/MECH816 setup.png" alt="Project Image" class="project-details__showcase-img" />
+            <figcaption>Smartphone location for experiment using simple excercise case (left) and recorded raw and
+              filtered Euler angles during simulated hand loom motions. </figcaption>
+          </figure>
+        </div>
+        <div class="project-details__content-main">
+          <div class="project-details__desc">
+            <h3 class="project-details__content-title">Project Overview</h3>
+            <p class="project-details__desc-para">
+
+            </p>
+            <p class="project-details__desc-para">
+              Two discrete Kalman filters were designed to estimate the gravitational acceleration vector
+              and magnetic field from external acceleration and magnetic disturbances respectively. The estimated
+              gravitational acceleration
+              and magnetic field can be used with the Arctangent method to calculate the Euler angles to determine the
+              orientation of the phone.
+              The designed filter was then validated against a provided data set from Xsens IMU using its raw and
+              processed data. After validation
+              of the filter was completed, data was acquired using a smartphone attached to the arm and forearm while
+              simulating motions of
+              using a handloom.
+            </p>
+            <div class="project-details__med-img-cont">
+              <figure>
+                <img src="./assets/png/MECH816 error.png" alt="Project Image" class="project-details__small-img" />
+                <figcaption>Error in Euler angles from developed Kalman filter and the processed XSENS data.
+                </figcaption>
+              </figure>
             </div>
-            <div class="project-details__tools-used">
-              <h3 class="project-details__content-title">Tools Used</h3>
-              <div class="skills">
-                <div class="skills__skill">MATLAB</div>
-                <div class="skills__skill">Data Analysis</div>
-                <div class="skills__skill">Biomechanics</div>
-                <div class="skills__skill">Stochastics</div>
-              </div>
-            </div>
-          
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer class="main-footer">
-      <div class="main-container">
-        <div class="main-footer__upper">
-          <div class="main-footer__row main-footer__row-1">
-            <h2 class="heading heading-sm main-footer__heading-sm">
-              <span>Social</span>
-            </h2>
-            <div class="main-footer__social-cont">
-              <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/linkedin-ico.png"
-                  alt="icon"
-                />
-              </a>
-              <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/github-ico.png"
-                  alt="icon"
-                />
-              </a>
-            </div>
-          </div>
-          <div class="main-footer__row main-footer__row-2">
-            <h4 class="heading heading-sm text-lt">Thomas Huckell</h4>
-            <p class="main-footer__short-desc">
-              tom.huckell@gmail.com
+
+            <p class="project-details__desc-para">
+              Comparing our filter on the raw Xsens data set I was able to produce Euler angles within an Root Mean
+              Square (RMS) error of [1.25 1.09 1.40] degrees of
+              the processed data using Xsens proprietary software. With the filter providing accurate measurements the
+              filter was tested on a smartphone's
+              IMU data. While no ground truth validation of the phones measurement was completed, the Kalman filter was
+              able to produce results
+              that capture key trends of the motion when simulating the operation of a handloom.
             </p>
           </div>
+          <div class="project-details__tools-used">
+            <h3 class="project-details__content-title">Tools Used</h3>
+            <div class="skills">
+              <div class="skills__skill">MATLAB</div>
+              <div class="skills__skill">Data Analysis</div>
+              <div class="skills__skill">Biomechanics</div>
+              <div class="skills__skill">Stochastics</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="main-footer">
+    <div class="main-container">
+      <div class="main-footer__upper">
+        <div class="main-footer__row main-footer__row-1">
+
+          <div class="main-footer__row main-footer__row-1__Resume">
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Resume</span>
+            </h2>
+            <div class="main-footer__resume-cont">
+              <a target="_blank" rel="noreferrer" href="resume/Resume_Thomas_Huckell.pdf">
+                <img class="main-footer__icon" src="./assets/png/resume-ico.png" alt="icon" />
+              </a>
+            </div>
+          </div>
+
+          <div class="main-footer__row main-footer__row-1__Socials">
+
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Socials</span>
+            </h2>
+
+            <div class="main-footer__social-cont">
+              <a target="_blank" rel="noreferrer" href="#">
+                <img class="main-footer__icon" src="./assets/png/linkedin-ico.png" alt="icon" />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img class="main-footer__icon" src="./assets/png/github-ico.png" alt="icon" />
+              </a>
+            </div>
+
+          </div>
+
+
         </div>
 
-       
+        <div class="main-footer__row main-footer__row-2">
+          <h4 class="heading heading-sm text-lt">Thomas Huckell</h4>
+          <p class="main-footer__short-desc">
+            tom.huckell@gmail.com
+          </p>
+        </div>
       </div>
-    </footer>
-    <script src="./index.js"></script>
-  </body>
+
+
+    </div>
+  </footer>
+  <script src="./index.js"></script>
+</body>
+
 </html>
