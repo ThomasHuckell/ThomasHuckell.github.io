@@ -1030,6 +1030,16 @@ textarea {
   line-height: 1.7;
 }
 
+@media only screen and (max-width: 56.25em) {
+  .main-footer__short-desc {
+    margin-top: 2rem;
+    color: #eee;
+    font-size: 1.5rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+}
+
 .main-footer__social-cont {
   margin-top: 2rem;
   display: flex;
