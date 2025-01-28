@@ -474,6 +474,7 @@ textarea {
   margin-bottom: 3rem;
 }
 
+
 @media only screen and (max-width: 37.5em) {
   .projects__row-content-desc {
     font-size: 1.7rem;
@@ -720,12 +721,33 @@ textarea {
   margin-bottom: 2rem;
 }
 
+.project-details__desc-para a.body:link,
+a.body:active,
+a.body:visited {
+  color: dar;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.project-details__desc-para a.body:hover {
+  color: #2B394B;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
 .project-details__desc-list {
   font-size: 1.8rem;
   line-height: 1.7;
   color: grey;
   margin-bottom: 1rem;
 }
+
+.project-details__desc-list li.circle {
+  list-style: circle;
+  margin: 1em;
+}
+
+
 
 .project-details__link {
   font-size: 1.8rem;
