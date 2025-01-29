@@ -121,7 +121,7 @@
               Legged robots are complex systems with a high degree of freedom which make optimal
               control methodologies for the whole-body dynamics computationally complex, especially
               for planning over long time horizons. Reduced order models encapsulate the whole-body
-              dynamics into lower degree of freedom representation, making it more suitable for
+              dynamics into a lower degree of freedom representation, making it more suitable for
               long term planning. The solutions of the reduced order models can then be
               used as objectives for the whole-body controller to track and execute.
             </p>
@@ -200,7 +200,7 @@
               Flywheel (LIPFW), and Variable Height Inverted Pendulum (VHIP) models were examined. These models
               correspond to an ankle,
               ankle + hip, and ankle + variable height balancing strategy. Anthropomorphic model parameters were used to
-              gain insight on human balancing and better elucidate each strategies utility in standing balance for
+              gain insight on human balancing and better elucidate each strategy's utility in standing balance for
               legged robots.
             </p>
             <div class="project-details__med-img-cont">
@@ -208,7 +208,7 @@
                 <img src="./assets/png/LIP_stability.png" alt="lip stability" class="project-details__med-img" />
                 <figcaption c>LIP model stability region with recovery trajectories using PD feedback control of the
                   center of pressure.
-                  The LIP stability criterion requires the capture point to within the base of support: &delta; .
+                  The LIP stability criterion requires the capture point to be within the base of support: &delta; .
                 </figcaption>
               </figure>
             </div>
@@ -244,7 +244,8 @@
               the amount of time these strategies can be applied. While the hip strategy is independent
               of initial condition, the variable height strategy is dependent on initial condition. The variable height
               strategy is based on momentarily increasing the ground reaction force. The component of this force
-              that contributes to restoring balance is dependant difference between the center of mass and the center of
+              that contributes to restoring balance is dependent on the difference between the center of mass and the
+              center of
               pressure, thus as the center of
               mass approaches the center of pressure limits, the impact of increased ground reaction force magnitude is
               reduced.
@@ -294,7 +295,7 @@
               <figure>
                 <img src="./assets/png/trajOpt_strategyComp.png" alt="Project Image" class="project-details__med-img" />
                 <figcaption>Relative control contribution of each balancing strategy compared against push magnitude for
-                  the VHIPPFW model. A hierarchal selection of balancing strategies is observed with
+                  the VHIPPFW model. A hierarchical selection of balancing strategies is observed with
                   ankle balancing being dominant for small disturbances. As the push disturbances reach the limit of the
                   ankle strategy the hip strategy then begins to be adopted, while the variable height
                   strategy is adopted as disturbance reaches the combined ankle + hip balancing limit.
@@ -303,7 +304,7 @@
             <p class="project-details__desc-para">
               The unified model with access to all available balancing strategies was able to recover from the largest
               push disturbance, 3.0% larger than the next best reduced order model.
-              A hierarchal selection of balancing strategy was observed (see above figure), adopting the next most
+              A hierarchical selection of balancing strategy was observed (see above figure), adopting the next most
               effective balancing strategy at
               limits of the previous strategy, exhibiting similarities to human balancing preferences.
             </p>
@@ -376,12 +377,12 @@
               The next step of this research is hardware implementation on a one-legged robot. Development of a
               one-legged robot to test push recovery was started but due to
               time constraints and limited access to the lab during the early stages of the COVID-19 pandemic this scope
-              was removed from of my thesis. Preliminary work was done
+              was removed from my thesis. Preliminary work was done
               on constructing and testing actuators to use for the one-legged robot. The prototype's actuation was based
               upon the <a href="https://open-dynamic-robot-initiative.github.io/"><u>Open Dynamic Robot
                   Initiative's</u></a> actuator design.
               Testing and integration of the field oriented control through the Texas Instruments evaluation board with
-              Simulink was conducted on motor test rig to do simple force control tasks.
+              Simulink was conducted on a motor test rig to do simple force control tasks.
             </p>
             <div class="project-details__med-img-cont">
               <figure>
